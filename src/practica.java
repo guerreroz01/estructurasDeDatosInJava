@@ -51,9 +51,7 @@ public class practica {
     
     public static void insertSort(int[] arr)
     {
-        int x;
         for (int i = 1; i < arr.length; i++) {
-            x = i;
             for(int j = i; j > 0; j--)
             {
                 if(arr[j] < arr[j-1])
