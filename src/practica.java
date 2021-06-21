@@ -1,19 +1,26 @@
 public class practica {
 
     public static void main(String[] args){
-        int[] myArr = {44, 50, 12, 76, 1, 89, 32, 46, 11, 200, 9, 5};
+        int[] myArr = new int[10];
 
-        for(int i=0; i<myArr.length; i++)
-            System.out.print(myArr[i] + " ");
-        System.out.println("");
+        for(int i=0; i< myArr.length; i++)
+        {
+            int n = (int)(java.lang.Math.random()*(myArr.length)-1);
+            myArr[i] = n;
+        }
 
+        display(myArr);
         insertSort(myArr);
+        display(myArr);
+    }
 
+    public static void display(int[] myArr)
+    {
         for(int i=0; i<myArr.length; i++)
             System.out.print(myArr[i] + " ");
         System.out.println("");
-
     }
+
     public static void bubleSort(int[] arr)
     {
         for(int i=arr.length-1; i>1; i--)
@@ -63,6 +70,23 @@ public class practica {
                     break;
                 }
             }
+        }
+    }
+
+    public static int buscar(int[] arr, int value, int start, int end)
+    {
+        int left, mid, right;
+        left = start;
+        right = end;
+        mid = (left + right) / 2;
+
+        if(left > right) return -1;
+        else if(arr[mid] == value) return mid;
+        else {
+            if(arr[mid]< value)
+                return buscar(arr, value, mid+1, end);
+            else
+                return buscar(arr, value, right, end-1);
         }
     }
 }
