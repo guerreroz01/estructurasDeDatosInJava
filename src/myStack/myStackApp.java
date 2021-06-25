@@ -9,12 +9,11 @@ public class myStackApp {
         arr = new LinkedList();
         arrReversed = new LinkedList();
 
-        String text = "hola mundo";
+        String text = "Colorante";
 
         for(int i=0; i<text.length(); i++)
-        {
             arr.push(text.charAt(i));
-        }
+
 
         while(!arr.isEmpty())
         {
@@ -24,9 +23,7 @@ public class myStackApp {
         }
         System.out.println("");
         while(!arrReversed.isEmpty())
-        {
             System.out.print(arrReversed.pop());
-        }
 
     }
 

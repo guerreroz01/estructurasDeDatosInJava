@@ -1,17 +1,15 @@
 public class practica {
 
     public static void main(String[] args){
-        int[] myArr = new int[10];
+        int[] myArr = {1,2,3,4,5,6,7,8,9};
 
-        for(int i=0; i< myArr.length; i++)
-        {
-            int n = (int)(java.lang.Math.random()*(myArr.length)-1);
-            myArr[i] = n;
-        }
+//        for(int i=0; i< myArr.length; i++)
+//        {
+//            int n = (int)(java.lang.Math.random()*(myArr.length)-1);
+//            myArr[i] = n;
+//        }
+        back(myArr);
 
-        display(myArr);
-        insertSort(myArr);
-        display(myArr);
     }
 
     public static void display(int[] myArr)
@@ -80,13 +78,19 @@ public class practica {
         right = end;
         mid = (left + right) / 2;
 
-        if(left > right) return -1;
-        else if(arr[mid] == value) return mid;
+        if(arr[mid] == value) return mid;
+        else if(left > right) return -1;
         else {
             if(arr[mid]< value)
                 return buscar(arr, value, mid+1, end);
             else
                 return buscar(arr, value, right, end-1);
         }
+    }
+
+    public static void back(int[] arr)
+    {
+        for(int i=0; i< arr.length; i++)
+            System.out.print(arr[arr.length-1- i] + " ");
     }
 }
